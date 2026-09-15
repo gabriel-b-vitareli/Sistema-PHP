@@ -1,8 +1,8 @@
 <?php 
-$host = "192.168.10.19";
-$dbname = "escola";
-$user = "escola";
-$pass = "escola";
+$host = "XXX.XXX.XX.XX";
+$dbname = "nomedadatabase";
+$user = "usuario";
+$pass = "senha";
 
 try {
     $conexao = new PDO(
