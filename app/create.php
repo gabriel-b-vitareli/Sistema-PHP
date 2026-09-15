@@ -3,9 +3,7 @@ require '../includes/header.php';
 require_once '../database/connect.php'; 
 require_once '../includes/functions.php'; 
 
-// É melhor processar o POST antes de renderizar o HTML da página
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    // Captura o valor do radio 'ativo'. Se não for marcado, define como 'false' por padrão
     $ativo = isset($_POST['ativo']) ? $_POST['ativo'] : 'false';
     
     cadastrar($conexao, $_POST['nome'], $_POST['nasc'], $_POST['turma'], $ativo);
@@ -19,7 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <title>Cadastrar</title>
 </head>
 <body>
-
+    <h1>Cadastrar Aluno</h1>
+    <hr>
     <form action="" method="POST">
         <label for="nome">Nome: </label>
         <input type="text" name="nome" id="nome"><br>

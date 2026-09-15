@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete</title>
+    <title>Deletar</title>
 </head>
 <body>
-    <h1>Deletar Usuário</h1>
+    <?php 
+    include '../includes/header.php';
+    include '../database/connect.php';
+    include '../includes/functions.php';
+    ?>
+
+    <h1>Deletar Aluno</h1>
+    <hr>
     
     <form action="" method="post">
         <label for="id">ID: </label>
@@ -15,19 +22,8 @@
     </form>
 
     <?php
-    require_once '../database/connect.php';
-    if ($_SERVER['REQUEST_METHOD'] == "POST"){
-
-    $id = $_POST['id'];
-    $sql = "DELETE FROM alunos WHERE id = :id";
-
-    $stmt = $conexao->prepare($sql);
-    $stmt->bindParam(":id",$id);
-    $stmt->execute();
-
-    echo "Registro $id deletado.";
-    } else {
-        echo "Insira o ID para apagar. <br>";
+    if(isset($_POST['id'])){
+        deletar($conexao,$_POST['id']);
     }
     ?>
     <a href="select.php"> Consulta DataBase </a>
