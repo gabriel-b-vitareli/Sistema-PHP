@@ -15,7 +15,7 @@
     </form>
 
     <?php
-    require_once 'connect_postgres.php';
+    require_once '../database/connect.php';
     if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
     $id = $_POST['id'];

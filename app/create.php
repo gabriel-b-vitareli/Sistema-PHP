@@ -1,3 +1,16 @@
+<?php 
+require '../includes/header.php';
+require_once '../database/connect.php'; 
+require_once '../includes/functions.php'; 
+
+// É melhor processar o POST antes de renderizar o HTML da página
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    // Captura o valor do radio 'ativo'. Se não for marcado, define como 'false' por padrão
+    $ativo = isset($_POST['ativo']) ? $_POST['ativo'] : 'false';
+    
+    cadastrar($conexao, $_POST['nome'], $_POST['nasc'], $_POST['turma'], $ativo);
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -6,33 +19,30 @@
     <title>Cadastrar</title>
 </head>
 <body>
-    <?php 
-    require_once './database/connect.php';
-    include './includes/header.php'
-    ?>
 
     <form action="" method="POST">
         <label for="nome">Nome: </label>
         <input type="text" name="nome" id="nome"><br>
-
+        
         <label for="turma">Turma: </label>
         <input type="text" name="turma" id="turma"><br>
-
+        
         <label for="nasc">Nascimento: </label>
         <input type="date" name="nasc" id="nasc"><br>
-
-        <label for="ativo">Ativo: </label>
-        <input type="radio" name="sim" id="sim" value="true">
+        
+        <label>Ativo: </label>
+        <!-- CORREÇÃO: Ambos os inputs agora possuem o name="ativo" -->
+        <input type="radio" name="ativo" id="sim" value="true">
         <label for="sim">SIM</label>
-        <input type="radio" name="nao" id="nao" value="false">
+        
+        <input type="radio" name="ativo" id="nao" value="false">
         <label for="nao">NÃO</label>
-
-        <br>
-
-        <input type="reset" value="Limpar"><br>
+        <br><br>
+        
+        <input type="reset" value="Limpar">
         <input type="submit" value="Cadastrar">
     </form>
 
-    <?php include './includes/footer.php'?>
+<?php include '../includes/footer.php'; ?>
 </body>
 </html>

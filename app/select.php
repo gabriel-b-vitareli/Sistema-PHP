@@ -6,11 +6,9 @@
     <title>Painel de Alunos</title>
 </head>
 <body>
-    <?php require './includes/header.php';?>
-    <div style="width: 50%; margin:auto; text-align:center; border:1px solid black; border-radius:5px;">
-
     <?php 
-        require_once './database/connect.php';
+        require '../includes/header.php';
+        require_once '../database/connect.php';
 
         $sql = "SELECT * FROM alunos";
 
@@ -31,7 +29,7 @@
 
     </div>
 
-    <?php require './includes/footer.php';?>
+    <?php require '../includes/footer.php';?>
 </body>
 </html>
 
