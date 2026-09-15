@@ -55,4 +55,18 @@ function consultar($conexao,$id){
     echo "<hr>Aluno: {$aluno['nome']}<br>Turma: {$aluno['turma']}<br>Nascimento: {$aluno['nasc']}<br>Ativo: {$aluno['ativo']}";
 }
 
+function atualizar($conexao,$id,$nome,$turma,$nasc,$ativo){
+    $sql = "UPDATE alunos SET nome = :nome, turma = :turma, nasc = :nasc, ativo = :ativo WHERE id = :id";
+
+    $stmt = $conexao->prepare($sql);
+    $stmt->bindValue(":nome", $nome);
+    $stmt->bindValue(":turma", $turma);
+    $stmt->bindValue(":nasc", $nasc);
+    $stmt->bindValue(":ativo", $ativo);
+    $stmt->bindValue(":id", $id);
+    $stmt->execute();
+
+    echo "Nome alterado com sucesso.";
+}
+
 ?>
