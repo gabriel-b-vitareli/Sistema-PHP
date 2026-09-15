@@ -17,7 +17,6 @@ include '../database/connect.php';
     <label for="id">ID do Aluno para atualizar:</label><br>
     <input type="number" name="id" id="id"><br>
 
-    <!-- CORRIGIDO: alterado name para "nome" e id para "nome" -->
     <label for="nome">Atualizar nome do aluno:</label><br>
     <input type="text" name="nome" id="nome"><br>
 
@@ -28,7 +27,6 @@ include '../database/connect.php';
     <input type="date" name="nasc" id="nasc"><br>
 
     <label>Atualizar status de ativo do aluno:</label><br>
-    <!-- CORRIGIDO: IDs únicos para bater com o "for" das labels -->
     <input type="radio" name="ativo" id="sim" value="true">
     <label for="sim">SIM</label>
     
