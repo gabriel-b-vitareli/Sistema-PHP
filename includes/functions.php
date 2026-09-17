@@ -66,6 +66,18 @@ function consultar($conexao,$id){
     echo "<hr>Aluno: {$aluno['nome']}<br>Turma: {$aluno['turma']}<br>Nascimento: {$aluno['nasc']}<br>Ativo: {$aluno['ativo']}";
 }
 
+function consultarUsuario($conexao,$email){
+    $sql = "SELECT id, email, senha FROM usuarios WHERE email = :email";
+
+    $stmt = $conexao->prepare($sql);
+    $stmt->bindParam(":email", $email);
+    $stmt->execute();
+
+    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $usuario;
+}
+
 function atualizar($conexao,$id,$nome,$turma,$nasc,$ativo){
     $sql = "UPDATE alunos SET nome = :nome, turma = :turma, nasc = :nasc, ativo = :ativo WHERE id = :id";
 

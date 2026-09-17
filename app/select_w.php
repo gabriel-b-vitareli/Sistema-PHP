@@ -9,6 +9,7 @@
 <body>
 
 <?php 
+require_once '../login/verifica-login.php'; 
 include '../includes/header.php';
 include '../includes/functions.php';
 require_once '../database/connect.php';

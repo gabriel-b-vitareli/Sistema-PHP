@@ -4,33 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/style.css">
-    <title>Cadastrar Usuário</title>
+    <title>Login de Usuário</title>
 </head>
 <body>
     <?php 
     require '../includes/header.php';
     require_once '../database/connect.php';
     require_once '../includes/functions.php';
+    session_start();
     ?>
 
-    <h1>Cadastrar Usuário</h1>
+    <h1>Fazer Login</h1>
     <hr>
     <form action="" method="POST">
         <label for="email">E-Mail:</label><br>
         <input type="email" name="email" id="email" required placeholder="Digite seu e-mail"><br><br>
         <label for="senha">Senha:</label><br>
         <input type="password" name="senha" id="senha" required placeholder="Digite sua senha"><br><br>
-        <input type="submit" value="Cadastrar">
+        <input type="submit" value="Entrar">
     </form>
-
+    
     <br><br><br>
     
-    Já tem uma conta? Clique <a href="login.php">aqui</a> para fazer login.
-
+    Não tem uma conta? Clique <a href="cadastrar.php">aqui</a> para se cadastrar.
     <?php 
     if(isset($_POST['email']) and isset($_POST['senha'])){
-        echo "<hr>";
-        cadastrarUsuario($conexao, $_POST['email'], $_POST['senha']);
+        $usuario = consultarUsuario($conexao,$_POST['email']);
+        if($_POST['email'] == $usuario['email'] && $_POST['senha'] == $usuario['senha']){
+            $_SESSION['id'] = $usuario['id'];
+            echo "<hr>Login aceito. Clique <a href='../index.php'>aqui</a> para voltar a página inicial.";
+            // header("Location: ../index.php");
+        // } elseif($_POST['senha'] != $usuario['senha']){
+        //     echo "<hr>Senha incorreta. Tente novamente.";
+        } else{
+            echo "<hr>Usuário inexistente. Tente novamente";
+        }
     }
     ?>
 </body>

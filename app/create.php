@@ -1,7 +1,8 @@
 <?php 
 require '../includes/header.php';
+require_once '../login/verifica-login.php'; 
 require_once '../database/connect.php'; 
-require_once '../includes/functions.php'; 
+require_once '../includes/functions.php';
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $ativo = isset($_POST['ativo']) ? $_POST['ativo'] : 'false';

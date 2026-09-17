@@ -8,6 +8,7 @@
 </head>
 <body>
     <?php 
+    require_once '../login/verifica-login.php'; 
     include '../includes/header.php';
     include '../database/connect.php';
     include '../includes/functions.php';
