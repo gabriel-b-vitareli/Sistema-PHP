@@ -15,6 +15,17 @@ function cadastrar($conexao, $nome, $nasc, $turma, $ativo)
     echo "Aluno cadastrado com sucesso!";
 }
 
+function cadastrarUsuario($conexao, $email, $senha){
+    $sql = "INSERT INTO usuarios (email, senha) VALUES (:email, :senha)";
+
+    $stmt = $conexao->prepare($sql);
+    $stmt->bindParam(":email",$email);
+    $stmt->bindParam(":senha",$senha);
+
+    $stmt->execute();
+    echo "Usuário cadastrado com sucesso!";
+}
+
 function deletar($conexao, $id){
     $sql = "DELETE FROM alunos WHERE id = :id";
 
