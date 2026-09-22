@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Sistema-PHP/style/style.css">
+    <link rel="stylesheet" href="/sistema-php/style/style.css">
     <title>Login de Usuário</title>
 </head>
 <body>
@@ -26,7 +26,7 @@
     
     <br><br><br>
     
-    Não tem uma conta? Clique <a href="/Sistema-PHP/login/cadastrar.php">aqui</a> para se cadastrar.
+    Não tem uma conta? Clique <a href="/sistema-php/login/cadastrar.php">aqui</a> para se cadastrar.
     <?php 
     if(isset($_POST['email']) and isset($_POST['senha'])){
         $usuario = consultarUsuario($conexao,$_POST['email']);

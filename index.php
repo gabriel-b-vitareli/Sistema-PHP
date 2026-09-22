@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Sistema-PHP/style/style.css">
+    <link rel="stylesheet" href="/sistema-php/style/style.css">
     <title>Sistema de Cadastro de Alunos</title>
 </head>
 <body>

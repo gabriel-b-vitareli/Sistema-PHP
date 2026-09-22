@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Sistema-PHP/style/style.css">
+    <link rel="stylesheet" href="/sistema-php/style/style.css">
     <title>Cadastrar Usuário</title>
 </head>
 <body>
@@ -25,7 +25,7 @@
 
     <br><br><br>
     
-    Já tem uma conta? Clique <a href="/Sistema-PHP/login/login.php">aqui</a> para fazer login.
+    Já tem uma conta? Clique <a href="/sistema-php/login/login.php">aqui</a> para fazer login.
 
     <?php 
     if(isset($_POST['email']) and isset($_POST['senha'])){
