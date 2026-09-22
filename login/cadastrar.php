@@ -25,7 +25,7 @@
 
     <br><br><br>
     
-    Já tem uma conta? Clique <a href="<?php echo __DIR__; ?>/login.php">aqui</a> para fazer login.
+    Já tem uma conta? Clique <a href="/Sistema-PHP/login/login.php">aqui</a> para fazer login.
 
     <?php 
     if(isset($_POST['email']) and isset($_POST['senha'])){

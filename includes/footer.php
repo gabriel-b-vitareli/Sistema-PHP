@@ -1,1 +1,0 @@
-<h3>Footer teste</h3>

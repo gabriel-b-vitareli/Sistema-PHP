@@ -26,13 +26,13 @@
     
     <br><br><br>
     
-    Não tem uma conta? Clique <a href="cadastrar.php">aqui</a> para se cadastrar.
+    Não tem uma conta? Clique <a href="/Sistema-PHP/login/cadastrar.php">aqui</a> para se cadastrar.
     <?php 
     if(isset($_POST['email']) and isset($_POST['senha'])){
         $usuario = consultarUsuario($conexao,$_POST['email']);
         if($_POST['email'] == $usuario['email'] && $_POST['senha'] == $usuario['senha']){
             $_SESSION['id'] = $usuario['id'];
-            echo "<hr>Login aceito. Clique <a href='../index.php'>aqui</a> para voltar a página inicial.";
+            echo "<hr>Login aceito. Clique <a href='" . __DIR__ . "/../index.php'>aqui</a> para voltar a página inicial.";
             // header("Location: ../index.php");
         // } elseif($_POST['senha'] != $usuario['senha']){
         //     echo "<hr>Senha incorreta. Tente novamente.";
