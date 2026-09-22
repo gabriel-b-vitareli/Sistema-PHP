@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="/Sistema-PHP/style/style.css">
     <title>Deletar</title>
 </head>
 <body>
     <?php 
-    require_once '../login/verifica-login.php'; 
-    include '../includes/header.php';
-    include '../database/connect.php';
-    include '../includes/functions.php';
+    require_once __DIR__ .'/../login/verifica-login.php'; 
+    include __DIR__ .'/../includes/header.php';
+    include __DIR__ .'/../database/connect.php';
+    include __DIR__ .'/../includes/functions.php';
     ?>
 
     <h1>Deletar Aluno</h1>
@@ -28,7 +28,7 @@
         deletar($conexao,$_POST['id']);
     }
     ?>
-    <a href="select.php"> Consulta DataBase </a>
+    <a href="<?php echo __DIR__; ?>/select.php"> Consulta DataBase </a>
 </body>
 </html>
 

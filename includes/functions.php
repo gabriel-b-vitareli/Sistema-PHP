@@ -1,5 +1,5 @@
 <?php 
-require_once '../database/connect.php';
+require_once __DIR__ .'/../database/connect.php';
 
 function cadastrar($conexao, $nome, $nasc, $turma, $ativo)
 {

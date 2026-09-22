@@ -1,8 +1,8 @@
 <?php 
-require '../includes/header.php';
-require_once '../login/verifica-login.php'; 
-require_once '../database/connect.php'; 
-require_once '../includes/functions.php';
+require __DIR__ . '/../includes/header.php';
+require_once __DIR__ .'/../login/verifica-login.php'; 
+require_once __DIR__ .'/../database/connect.php'; 
+require_once __DIR__ .'/../includes/functions.php';
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $ativo = isset($_POST['ativo']) ? $_POST['ativo'] : 'false';
@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="/Sistema-PHP/style/style.css">
     <title>Cadastrar</title>
 </head>
 <body>
@@ -44,6 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <input type="submit" value="Cadastrar">
     </form>
 
-<?php include '../includes/footer.php'; ?>
+<?php include __DIR__ . '/../includes/footer.php'; ?>
 </body>
 </html>

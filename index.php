@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="/Sistema-PHP/style/style.css">
     <title>Sistema de Cadastro de Alunos</title>
 </head>
 <body>
     <?php 
-    include './includes/header.php';
+    include __DIR__ .'/includes/header.php';
     ?>
 
     <h1>Seja bem-vindo!</h1>
 
     <?php 
-    include './includes/footer.php';
+    include __DIR__ .'/includes/footer.php';
     ?>
 </body>
 </html>

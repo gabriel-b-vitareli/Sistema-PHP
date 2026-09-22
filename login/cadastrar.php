@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="/Sistema-PHP/style/style.css">
     <title>Cadastrar Usuário</title>
 </head>
 <body>
     <?php 
-    require '../includes/header.php';
-    require_once '../database/connect.php';
-    require_once '../includes/functions.php';
+    require __DIR__ .'/../includes/header.php';
+    require_once __DIR__ .'/../database/connect.php';
+    require_once __DIR__ .'/../includes/functions.php';
     ?>
 
     <h1>Cadastrar Usuário</h1>
@@ -25,7 +25,7 @@
 
     <br><br><br>
     
-    Já tem uma conta? Clique <a href="login.php">aqui</a> para fazer login.
+    Já tem uma conta? Clique <a href="<?php echo __DIR__; ?>/login.php">aqui</a> para fazer login.
 
     <?php 
     if(isset($_POST['email']) and isset($_POST['senha'])){
