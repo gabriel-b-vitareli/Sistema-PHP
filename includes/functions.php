@@ -44,7 +44,7 @@ function listar($conexao){
 
         $alunos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        echo "<br><hr>";
+        echo "<hr>";
         foreach ($alunos as $aluno) {
             echo "ID: {$aluno['id']}<br>";
             echo "Nome: {$aluno['nome']}<br>";

@@ -15,6 +15,7 @@ include '../includes/functions.php';
 require_once '../database/connect.php';
 ?>
 <h1>Consulta de Aluno</h1>
+<hr>
 <form action="" method="POST">
     <label for="id">ID do aluno: </label>
     <input type="number" name="id" id="id">

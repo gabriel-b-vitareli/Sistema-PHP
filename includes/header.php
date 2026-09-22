@@ -6,7 +6,8 @@
         <a href="../app/select.php">Relatório</a> | 
         <a href="../app/select_w.php">Aluno</a> | 
         <a href="../app/update.php">Atualizar</a> | 
-        <a href="../login/login.php">Login</a>
+        <a href="../login/login.php">Login</a> | 
+        <a href="../login/logout.php">Sair</a>
     </nav>
 </header>
 <hr>
