@@ -26,7 +26,6 @@
     
     <br><br><br>
     
-    Não tem uma conta? Clique <a href="/sistema-php/login/cadastrar.php">aqui</a> para se cadastrar.
     <?php 
     if(isset($_POST['email']) and isset($_POST['senha'])){
         $usuario = consultarUsuario($conexao,$_POST['email']);
